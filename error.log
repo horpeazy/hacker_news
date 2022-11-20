@@ -1,0 +1,98 @@
+2022-09-19 10:53:44,247 INFO: errors [in C:\Users\user\Desktop\Hacker News\app.py:39]
+2022-09-21 20:25:36,499 INFO: errors         [in C:\Users\user\Desktop\Hacker News\app.py:144]
+2022-09-21 20:26:25,824 INFO: errors         [in C:\Users\user\Desktop\Hacker News\app.py:144]
+2022-09-21 20:27:42,854 INFO: errors         [in C:\Users\user\Desktop\Hacker News\app.py:144]
+2022-09-21 20:29:29,610 INFO: errors         [in C:\Users\user\Desktop\Hacker News\app.py:144]
+2022-09-21 20:29:49,520 ERROR: Exception on / [GET]         [in c:\users\user\desktop\hacker news\virtualenv\lib\site-packages\flask\app.py:1741]
+Traceback (most recent call last):
+  File "c:\users\user\desktop\hacker news\virtualenv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\user\desktop\hacker news\virtualenv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\user\desktop\hacker news\virtualenv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\user\desktop\hacker news\virtualenv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\user\Desktop\Hacker News\app.py", line 132, in index
+    return render_template('pages/index.html', data=data)
+  File "c:\users\user\desktop\hacker news\virtualenv\lib\site-packages\flask\templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "c:\users\user\desktop\hacker news\virtualenv\lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\user\desktop\hacker news\virtualenv\lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "c:\users\user\desktop\hacker news\virtualenv\lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "c:\users\user\desktop\hacker news\virtualenv\lib\site-packages\jinja2\loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "c:\users\user\desktop\hacker news\virtualenv\lib\site-packages\jinja2\environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "c:\users\user\desktop\hacker news\virtualenv\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\user\Desktop\Hacker News\templates\pages\index.html", line 13, in template
+    {{ news.url ? news.url : '/items/{{news.id}}'}}
+jinja2.exceptions.TemplateSyntaxError: unexpected char '?' at 331
+2022-09-22 11:45:47,346 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:422]
+2022-09-23 08:04:17,644 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:464]
+2022-09-23 08:59:28,798 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:464]
+2022-09-23 09:10:51,292 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:464]
+2022-09-23 10:31:00,460 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 10:33:30,439 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 10:35:34,181 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 10:37:03,949 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 10:43:55,836 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 10:49:08,536 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 10:50:45,261 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 11:20:59,243 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 11:33:03,625 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 11:33:24,247 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 11:40:16,843 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 11:40:29,823 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 11:43:42,156 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 11:45:54,981 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 11:46:04,560 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 11:47:13,525 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 11:54:07,079 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 11:54:32,947 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 12:06:49,896 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 12:07:35,773 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 12:07:59,556 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 12:08:17,181 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 12:08:33,375 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 12:08:51,574 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 12:09:04,605 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 12:09:22,317 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 12:09:36,519 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 12:09:36,597 ERROR: Exception on /api/v1/item/4 [PATCH]         [in C:\Users\user\Desktop\hacker_news\virtualenv\lib\site-packages\flask\app.py:1741]
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\hacker_news\virtualenv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\Desktop\hacker_news\virtualenv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\Desktop\hacker_news\virtualenv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\user\Desktop\hacker_news\virtualenv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\Desktop\hacker_news\virtualenv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\user\Desktop\hacker_news\app.py", line 331, in update_item
+    item = Item.query.filter(Item.id == item_id).\
+TypeError: filter_by() takes 1 positional argument but 2 were given
+2022-09-23 12:10:28,050 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 12:10:28,128 ERROR: Exception on /api/v1/item/4 [PATCH]         [in C:\Users\user\Desktop\hacker_news\virtualenv\lib\site-packages\flask\app.py:1741]
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\hacker_news\virtualenv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\Desktop\hacker_news\virtualenv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\Desktop\hacker_news\virtualenv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\user\Desktop\hacker_news\virtualenv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\Desktop\hacker_news\virtualenv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\user\Desktop\hacker_news\app.py", line 331, in update_item
+    item = Item.query.filter(Item.id == item_id).\
+TypeError: filter_by() takes 1 positional argument but 2 were given
+2022-09-23 12:11:41,930 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]
+2022-09-23 12:12:50,986 INFO: errors         [in C:\Users\user\Desktop\hacker_news\app.py:476]

@@ -1,0 +1,36 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Hackerr News{% endblock %}
+{% block content %}
+<div class="news">
+    <h2>
+        {{  news.title }} 
+        {% if news.url %}
+        <sub>
+            <a href="{{ news.url }}">Read more..</a>
+        </sub>
+        {% endif %}
+    </h2>
+    <div class="text">
+        {% if news.text %}
+            {{ news.text }}
+        {% endif %}
+    </div>
+
+    <div class="comments">
+        {% if sub_items %}
+            <p>Comments: </p>
+            <ul>
+                {% for sub_item in sub_items %}
+                <li>
+                    {{ sub_item.text }}
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="no-comment">
+                <p >No comment</p>  
+            </div>
+        {% endif %}
+    </div>
+</a>
+{% endblock %}

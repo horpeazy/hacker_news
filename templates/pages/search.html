@@ -1,0 +1,62 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Hackerr News{% endblock %}
+{% block content %}
+<section>
+    <div class="news">
+        <div>
+            <h2>Search result for "{{ data.search_term }}"</h2>
+            <p>Found: {{ data.count }}</p>
+        </div>
+        <ul>
+            {%for news in data.news %}
+            <li>
+                {% if news.title %}
+                    {% if news.url %}
+                        <a href="{{ news.url }}" class="title">
+                            {{ news.title }}
+                        </a> 
+                        <sub>
+                            <span>
+                                ({{ news.score }}
+                                {% if news.score == 1 %}
+                                    vote
+                                {% else %}
+                                    votes
+                                {% endif %} )
+                            </span>
+                        </sub>
+                    {% else %}
+                        <a href="/news/{{ news.id }}" class="title">
+                            {{ news.title }}
+                        </a>    
+                        <sub>
+                            <span>
+                                ({{ news.score }}
+                                {% if news.score == 1 %}
+                                    vote
+                                {% else %}
+                                    votes
+                                {% endif %} )
+                            </span>
+                        </sub>   
+                    {% endif %}
+                {% endif %}
+                <div>
+                    <span class="meta">by: {{ news.by }}</span>
+                    <span class="meta">time: {{ news.time }}</span>
+                </div>
+                <span><a href="news/{{ news.id }}" class="view"><i class="fa fa-eye"></i></a></span> 
+            </li>
+            {% endfor %}
+        </ul>
+        <div>
+            {% if data.prev_page %}
+                <a href="/search?search_term={{ data.search_term}}&page={{ data.prev_page }}">Prev</a>
+            {% endif %}
+            {% if data.next_page %}
+                <a href="/search?search_term={{ data.search_term}}&page={{ data.next_page }}">Next</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

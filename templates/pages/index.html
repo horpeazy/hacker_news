@@ -1,0 +1,108 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Hackerr News{% endblock %}
+{% block content %}
+<section class="form-wrapper">
+    <form action="/" class="filter-form">
+        <div class='form-group'>
+            <select name='filter' class='form-control filter'>
+                <option value='' disabled selected>Filter</option>
+                <option value='story' class='option'>Story</option>
+                <option value='job' class='option'>Job</option>
+                <option value='poll' class='option'>Poll</option>
+            </select>
+        </div>
+        <button type="submit">Apply filter</button>
+    </form>
+    <form action="/search" method="post" class="search-form">
+        <div class="form-group">
+        <div class="search-bar_inputContainer">
+            <input class="form-control" 
+            placeholder="Search" 
+            type="search"
+            name="search_term"
+            aria-label="Search"
+            />
+        </div>
+        </div>
+    </form>
+</section>
+
+<div class="news">
+    {% if data.length == 0 %}
+        <div class="no-news">
+            <h2>No news</h2>
+        </div>
+    {% endif %}
+    <ul>
+        {%for news in data.news %}
+        <li>
+            {% if news.title %}
+                {% if news.url %}
+                    <a href="{{ news.url }}" class="title">
+                        {{ news.title }}
+                    </a> 
+                    <sub>
+                        <span>
+                            ({{ news.score }}
+                            {% if news.score == 1 %}
+                                vote
+                            {% else %}
+                                votes
+                            {% endif %} )
+                        </span>
+                    </sub>
+                {% else %}
+                    <a href="/news/{{ news.id }}" class="title">
+                        {{ news.title }}
+                    </a>    
+                    <sub>
+                        <span>
+                            ({{ news.score }}
+                            {% if news.score == 1 %}
+                                vote
+                            {% else %}
+                                votes
+                            {% endif %} )
+                        </span>
+                    </sub>   
+                {% endif %}
+            {% endif %}
+            <div>
+                <span class="meta">by: {{ news.by }}</span>
+                <span class="meta">time: {{ news.time }}</span>
+            </div>
+            <span><a href="news/{{ news.id }}" class="view"><i class="fa fa-eye"></i></a></span> 
+        </li>
+        {% endfor %}
+    </ul>
+    <div>
+        {% if data.prev_page %}
+        <span class="prev">
+            {% if data.filter == None %} 
+                <a href="/?page={{ data.prev_page }}">
+                    <i class="fa fa-angle-double-left" aria-hidden="true"></i> Prev 
+                </a>
+            {% else %}
+                <a href="/?filter={{ data.filter }}&page={{ data.prev_page }}">
+                    <i class="fa fa-angle-double-left" aria-hidden="true"></i> Prev 
+                </a>
+            {% endif %}
+        </span>
+        {% endif %}
+
+        {% if data.next_page %}
+        <span class="next">
+            {% if data.filter == None %} 
+                <a href="/?page={{ data.next_page }}">
+                    Next <i class="fa fa-angle-double-right" aria-hidden="true"></i>  
+                </a>
+            {% else %}
+                <a href="/?filter={{ data.filter }}&page={{ data.next_page }}">
+                    Next <i class="fa fa-angle-double-right" aria-hidden="true"></i>  
+                </a>
+            {% endif %}
+        </span>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
